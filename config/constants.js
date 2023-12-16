@@ -1,5 +1,5 @@
 let config = {
-    Name: "Ameki的歌单", // 主页名字
+    Name: "雨纪Ameki", // 主页名字
   
     BiliLiveRoomID: "27628019", // 直播间id
   

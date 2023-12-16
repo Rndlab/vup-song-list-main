@@ -4,8 +4,9 @@ import math
 song_df = pd.read_excel('./music.xlsx')
 song_df = song_df.where(pd.notnull(song_df), None)
 song_list = []
-
+print('开始生成歌单')
 for index, row in song_df.iterrows():
+    print(row[0])
     song_data = {
         "index": index,
         "song_name": row[0] or '',
