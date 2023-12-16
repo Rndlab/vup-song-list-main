@@ -29,7 +29,8 @@ npm run dev
 
 [song-list-of-nanakaie](https://github.com/alan314m/song-list-of-nanakaie)
 
-[song-list-of-nanakaie](https://github.com/Akegarasu/vup-song-list)
+
+[vup-song-list](https://github.com/Akegarasu/vup-song-list)
 
 感谢以上项目的开源贡献。
 修改了若干处使项目更低门槛可以部署、编辑、发布。
