@@ -1,5 +1,6 @@
 # vup 歌单站(雨纪ameki)
 
+[雨纪ameki的歌单](ameki.online)
 
 ### 制作歌单内容
 
