@@ -2,6 +2,17 @@
 
 [雨纪ameki的歌单](https://www.ameki.online)
 
+### 零编程基础，更新歌单列表！
+
+1.告诉我你的github用户名，之后确认接受管理项目的邀请。
+
+2.去这里下载 github 桌面端软件: https://desktop.github.com/
+安装完成后就可以用桌面端登陆账号啦。
+
+
+
+![](/step/1.png)
+
 ### 制作歌单内容
 
 1. 按照模板 `scrips/music.xlsx` 填写，制作歌单内容
