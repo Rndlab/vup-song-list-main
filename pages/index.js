@@ -273,9 +273,12 @@ export default function Home() {
         ) : (
           <div></div>
         )}
-        <footer className={styles.footer}>
-          {config.Footer}
-        </footer>
+        <Link href={"https://github.com/Rndlab/vup-song-list-main"} passHref>
+          <footer className={styles.footer}>
+            <img src="assets/images/github.png"></img>
+            <a>{config.Footer}</a>
+          </footer>
+        </Link>
       </Container>
 
       <Offcanvas show={showIntro} onHide={handleCloseIntro}>

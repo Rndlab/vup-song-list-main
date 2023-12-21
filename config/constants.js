@@ -5,7 +5,7 @@ let config = {
   
     NetEaseMusicId: "", // 网易云音乐id
     QQMusicId: "", // QQ音乐id
-    Footer: "© 2021 VirtuaReal Project",
+    Footer: "Github",
   
     Cursor: false, // 使用自定义光标图片
   
@@ -22,7 +22,17 @@ let config = {
       {
         link: "https://pome.vip/ueXVX7AC",
         name: "提问箱",
-        image: "/assets/icon/tapechat.png",
+        image: "/assets/icon/pome.png",
+      },
+      {
+        link: "https://weibo.com/u/7842913991",
+        name: "微博",
+        image: "/assets/icon/weibo.png",
+      },
+      {
+        link: "https://twitter.com/AmekiVR",
+        name: "Twitter",
+        image: "/assets/icon/th.png",
       },
     ],
 };

@@ -110,7 +110,7 @@ export default function Banner({ songCount }) {
                   link={btn.link}
                   image={btn.image}
                   name={btn.name}
-                  style={{ marginTop: 0, border: "2px solid #DFD1E3" }}
+                  style={{ marginTop: 0, border: "2px solid #DFD1E3", marginRight: 4 }}
                 ></BannerButton>
               );
             })}
