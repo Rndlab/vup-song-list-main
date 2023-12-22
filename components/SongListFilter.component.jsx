@@ -72,7 +72,8 @@ export default function SongListFilter({
                 </Col>
               );
             })}
-
+          </Row>
+          <Row>
             {remarkCategories.map((remark) => {
               return (
                 <Col xs={6} md={3} key={remark}>
@@ -93,7 +94,7 @@ export default function SongListFilter({
                 </Col>
               );
             })}
-
+          
             {/* <Col xs={6} md={3}>
               <div className="d-grid">
                 <Button

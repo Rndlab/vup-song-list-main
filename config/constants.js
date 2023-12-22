@@ -10,7 +10,7 @@ let config = {
     Cursor: false, // 使用自定义光标图片
   
     LanguageCategories: ["日语", "英语"], // 语言分类
-    RemarkCategories: ["河曲"], // 标签分类
+    RemarkCategories: ["河曲", "术力口"], // 标签分类
   
     BannerTitle: "雨纪_Ameki", // banner 标题
   
