@@ -136,9 +136,13 @@ export default function Home() {
   };
 
   const showBiliPlayer = (song) => {
-    setBVID(song.BVID);
-    setPlayerModalShow(true);
-    setPlayerModalSongName(song.song_name);
+    if (song.BVID) {
+      setBVID(song.BVID);
+      setPlayerModalShow(true);
+      setPlayerModalSongName(song.song_name);
+    } else if (song.url) {
+      window.open(song.url)
+    }
   }
 
   return (
@@ -233,7 +237,7 @@ export default function Home() {
                         <th></th>
                         <th>歌名</th>
                         <th></th>
-                        <th>歌手</th>
+                        <th>原唱歌手</th>
                         <th>语言</th>
                         <th>备注</th>
                       </tr>

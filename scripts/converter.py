@@ -20,7 +20,8 @@ for index, row in song_df.iterrows():
         "initial": ''.join(lazy_pinyin(row[0], style=Style.FIRST_LETTER))[0].upper(),
         "sticky_top": 0,
         "paid": 0,
-        "BVID": '' if row[4] is None else row[4]
+        "BVID": '' if row[4] is None else row[4],
+        "url": '' if row[5] is None else row[5]
     }
     song_list.append(song_data)
 
