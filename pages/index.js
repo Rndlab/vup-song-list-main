@@ -141,7 +141,7 @@ export default function Home() {
       setPlayerModalShow(true);
       setPlayerModalSongName(song.song_name);
     } else if (song.url) {
-      window.open(song.url)
+      window.open('https://music.163.com/#/dj?id=' + song.url)
     }
   }
 

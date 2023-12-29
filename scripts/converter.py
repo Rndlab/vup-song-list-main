@@ -3,7 +3,7 @@ import pandas as pd
 import math
 import time
 from pypinyin import Style, lazy_pinyin
-song_df = pd.read_excel('./music.xlsx')
+song_df = pd.read_excel('./music.xlsx', dtype={'网易云播客id': str})
 song_df = song_df.where(pd.notnull(song_df), None)
 song_list = []
 
