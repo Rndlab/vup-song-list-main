@@ -79,7 +79,7 @@ export default function Home() {
       copy("点歌 ￥" + song.song_name);
       toast.success(`付费曲目 ${song.song_name} 成功复制到剪贴板!`);
     } else {
-      copy("点歌 " + song.song_name);
+      copy("宝宝 可以点一首【" + song.song_name + '】吗');
       toast.success(`${song.song_name} 成功复制到剪贴板!`);
     }
   };
