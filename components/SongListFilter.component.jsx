@@ -21,7 +21,7 @@ export default function SongListFilter({
   categorySelection,
   setLanguageState,
   setRemarkState,
-  setPaidState,
+  // setPaidState,
   setInitialState,
 }) {
   return (
@@ -58,7 +58,7 @@ export default function SongListFilter({
                   <div className="d-grid">
                     <Button
                       className={isActive(categorySelection.lang, language)}
-                      onClick={(e) => {
+                      onClick={() => {
                         switchState(
                           setLanguageState,
                           categorySelection.lang,
@@ -80,7 +80,7 @@ export default function SongListFilter({
                   <div className="d-grid">
                     <Button
                       className={isActive(categorySelection.remark, remark)}
-                      onClick={(e) => {
+                      onClick={() => {
                         switchState(
                           setRemarkState,
                           categorySelection.remark,

@@ -86,7 +86,7 @@ export default function Home() {
 
   //改变语言过滤状态
   const setLanguageState = (lang) => {
-    setCategorySelection({ lang: lang, initial: "", paid: false, remark: "" });
+    setCategorySelection({ lang: lang, initial: "", paid: categorySelection.paid, remark: categorySelection.remark });
   };
 
   //改变首字母过滤状态
@@ -94,24 +94,24 @@ export default function Home() {
     setCategorySelection({
       lang: "国语",
       initial: initial,
-      paid: false,
-      remark: "",
+      paid: categorySelection.paid,
+      remark: categorySelection.remark,
     });
   };
 
   //改变备注过滤状态
   const setRemarkState = (remark) => {
     setCategorySelection({
-      lang: "",
-      initial: "",
-      paid: false,
+      lang: categorySelection.lang,
+      initial: categorySelection.initial,
+      paid: categorySelection.paid,
       remark: remark,
     });
   };
 
   //改变收费过滤状态
   const setPaidState = (paid) => {
-    setCategorySelection({ lang: "", initial: "", paid: paid, remark: "" });
+    setCategorySelection({ lang: categorySelection.lang, initial: categorySelection.initial, paid: paid, remark: categorySelection.remark });
   };
 
   //随便听听
