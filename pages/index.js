@@ -122,10 +122,6 @@ export default function Home() {
 
   //移动端自我介绍off canvas开关
   const handleCloseIntro = () => setShowIntro(false);
-  // const handleShowIntro = () => setShowIntro(true);
-  const handleShowIntro = () => {
-    window.open('https://vrp.live/member/Ameki')
-  }
 
   //滚动到顶部
   const scrollToTop = () => {
@@ -165,20 +161,24 @@ export default function Home() {
           </div>
         </a>
       </Link>
-      <div className={styles.offCanvasToggleDiv} onClick={handleShowIntro}>
-        <div className={styles.cornerToggle}>
-          <Image
-            loader={imageLoader}
-            src="assets/images/self_intro.png"
-            alt="打开自我介绍"
-            width={50}
-            height={50}
-          />
-          <b>
-            <i>官网介绍</i>
-          </b>
-        </div>
-      </div>
+      <Link href="https://vrp.live/member/Ameki" passHref>
+        <a target="_blank" style={{ textDecoration: "none", color: "#1D0C26" }}>
+          <div className={styles.offCanvasToggleDiv}>
+            <div className={styles.cornerToggle}>
+              <Image
+                loader={imageLoader}
+                src="assets/images/self_intro.png"
+                alt="打开自我介绍"
+                width={50}
+                height={50}
+              />
+              <b>
+                <i>官网介绍</i>
+              </b>
+            </div>
+          </div>
+        </a>
+      </Link>
       <Container>
         <Head>
           <title>{config.Name}的歌单</title>

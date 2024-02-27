@@ -335,4 +335,9 @@
   top: 0.25rem;
   right: 0.25rem;
   z-index: 1;
+  border-radius: 5px;
+}
+
+.offCanvasToggleDiv:hover {
+  background-color: rgba(255, 255, 255, 0.5);
 }
