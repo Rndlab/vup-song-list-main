@@ -192,6 +192,7 @@ export default function Home() {
           <Row>
             <Banner
               songCount={filteredSongList.length}
+              isFiltered={categorySelection.remark !== "" || categorySelection.lang !== ""}
             />
           </Row>
           {/** 过滤器控件 */}

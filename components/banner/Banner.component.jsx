@@ -14,7 +14,7 @@ import { getCursor } from "../../utils/utils";
 
 import BannerButton from "./BannerButton.component";
 
-export default function Banner({ songCount }) {
+export default function Banner({ songCount, isFiltered = false }) {
   const netEaseMusicComponent = (id) => {
     return id ? (
       <Link href={"https://music.163.com/#/artist?id=" + id} passHref>
@@ -78,7 +78,7 @@ export default function Banner({ songCount }) {
           {config.Name}
         </h1>
         <h1 className={"display-6 text-center " + styles.grandTitle}>
-          已收录的蝶歌 <b>{songCount}</b> 首
+          {isFiltered ? "已筛选的蝶歌" : "已收录的蝶歌" } <b>{songCount}</b> 首
         </h1>
         <p className="text-center py-3 mb-xl-5 text-muted">
           可以点击歌名复制哦
