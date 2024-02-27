@@ -7,14 +7,14 @@ import { config } from "../config/constants";
 const languageCategories = config.LanguageCategories;
 const remarkCategories = config.RemarkCategories;
 
-const isActive = (selected, execpt) => {
-  return selected == execpt
+const isActive = (selected, except) => {
+  return selected === except
     ? styles.customCategoryButtonActive
     : styles.customCategoryButton;
 };
 
-const switchState = (setter, selected, execpt) => {
-  return selected == execpt ? setter("") : setter(execpt);
+const switchState = (setter, selected, except) => {
+  return selected === except ? setter("") : setter(except);
 };
 
 export default function SongListFilter({

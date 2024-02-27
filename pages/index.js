@@ -58,24 +58,24 @@ export default function Home() {
       (utils.include(song.song_name, searchBox) || utils.include(song.language, searchBox) ||
         utils.include(song.remarks, searchBox) || utils.include(song.artist, searchBox)) &&
       //语言过滤按钮
-      (categorySelection.lang != ""
+      (categorySelection.lang !== ""
         ? song.language?.includes(categorySelection.lang)
         : true) &&
       //首字母过滤按钮
-      (categorySelection.initial != ""
+      (categorySelection.initial !== ""
         ? song.initial?.includes(categorySelection.initial)
         : true) &&
       //类型过滤按钮
-      (categorySelection.remark != ""
+      (categorySelection.remark !== ""
         ? song.remarks?.toLowerCase().includes(categorySelection.remark)
         : true) &&
       //付费过滤按钮
-      (categorySelection.paid ? song.paid == 1 : true)
+      (categorySelection.paid ? song.paid === 1 : true)
   );
 
   //处理用户复制行为
   const handleClickToCopy = (song) => {
-    if (song.paid == 1) {
+    if (song.paid === 1) {
       copy("点歌 ￥" + song.song_name);
       toast.success(`付费曲目 ${song.song_name} 成功复制到剪贴板!`);
     } else {
@@ -281,7 +281,7 @@ export default function Home() {
         )}
         <Link href={"https://github.com/Rndlab/vup-song-list-main"} passHref>
           <footer className={styles.footer}>
-            <img src="assets/images/github.png"></img>
+            <img src="assets/images/github.png" alt="github"></img>
             <a>{config.Footer}</a>
           </footer>
         </Link>
