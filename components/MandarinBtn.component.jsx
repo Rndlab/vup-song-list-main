@@ -33,7 +33,7 @@ export default function MandarinBtn({
             : setLanguageState("国语");
         }}
       >
-        {availableAlphabets.map((alphabet) => {
+        {availableAlphabets.sort().map((alphabet) => {
           return (
             <Dropdown.Item
               onClick={(e) => {
