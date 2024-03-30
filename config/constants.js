@@ -20,7 +20,7 @@ let config = {
     // 自定义按钮 （可以复制生成更多）
     CustomButtons: [
       {
-        link: "https://pome.vip/ueXVX7AC",
+        link: "https://pome.vip/Ameki126",
         name: "提问箱",
         image: "/assets/icon/pome.png",
       },
