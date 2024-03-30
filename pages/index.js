@@ -58,24 +58,24 @@ export default function Home() {
       (utils.include(song.song_name, searchBox) || utils.include(song.language, searchBox) ||
         utils.include(song.remarks, searchBox) || utils.include(song.artist, searchBox)) &&
       //语言过滤按钮
-      (categorySelection.lang != ""
+      (categorySelection.lang !== ""
         ? song.language?.includes(categorySelection.lang)
         : true) &&
       //首字母过滤按钮
-      (categorySelection.initial != ""
+      (categorySelection.initial !== ""
         ? song.initial?.includes(categorySelection.initial)
         : true) &&
       //类型过滤按钮
-      (categorySelection.remark != ""
+      (categorySelection.remark !== ""
         ? song.remarks?.toLowerCase().includes(categorySelection.remark)
         : true) &&
       //付费过滤按钮
-      (categorySelection.paid ? song.paid == 1 : true)
+      (categorySelection.paid ? song.paid === 1 : true)
   );
 
   //处理用户复制行为
   const handleClickToCopy = (song) => {
-    if (song.paid == 1) {
+    if (song.paid === 1) {
       copy("点歌 ￥" + song.song_name);
       toast.success(`付费曲目 ${song.song_name} 成功复制到剪贴板!`);
     } else {
@@ -86,7 +86,7 @@ export default function Home() {
 
   //改变语言过滤状态
   const setLanguageState = (lang) => {
-    setCategorySelection({ lang: lang, initial: "", paid: false, remark: "" });
+    setCategorySelection({ lang: lang, initial: "", paid: categorySelection.paid, remark: categorySelection.remark });
   };
 
   //改变首字母过滤状态
@@ -94,24 +94,24 @@ export default function Home() {
     setCategorySelection({
       lang: "国语",
       initial: initial,
-      paid: false,
-      remark: "",
+      paid: categorySelection.paid,
+      remark: categorySelection.remark,
     });
   };
 
   //改变备注过滤状态
   const setRemarkState = (remark) => {
     setCategorySelection({
-      lang: "",
-      initial: "",
-      paid: false,
+      lang: categorySelection.lang,
+      initial: categorySelection.initial,
+      paid: categorySelection.paid,
       remark: remark,
     });
   };
 
   //改变收费过滤状态
   const setPaidState = (paid) => {
-    setCategorySelection({ lang: "", initial: "", paid: paid, remark: "" });
+    setCategorySelection({ lang: categorySelection.lang, initial: categorySelection.initial, paid: paid, remark: categorySelection.remark });
   };
 
   //随便听听
@@ -122,10 +122,6 @@ export default function Home() {
 
   //移动端自我介绍off canvas开关
   const handleCloseIntro = () => setShowIntro(false);
-  // const handleShowIntro = () => setShowIntro(true);
-  const handleShowIntro = () => {
-    window.open('https://vrp.live/member/Ameki')
-  }
 
   //滚动到顶部
   const scrollToTop = () => {
@@ -165,20 +161,24 @@ export default function Home() {
           </div>
         </a>
       </Link>
-      <div className={styles.offCanvasToggleDiv} onClick={handleShowIntro}>
-        <div className={styles.cornerToggle}>
-          <Image
-            loader={imageLoader}
-            src="assets/images/self_intro.png"
-            alt="打开自我介绍"
-            width={50}
-            height={50}
-          />
-          <b>
-            <i>官网介绍</i>
-          </b>
-        </div>
-      </div>
+      <Link href="https://vrp.live/member/Ameki" passHref>
+        <a target="_blank" style={{ textDecoration: "none", color: "#1D0C26" }}>
+          <div className={styles.offCanvasToggleDiv}>
+            <div className={styles.cornerToggle}>
+              <Image
+                loader={imageLoader}
+                src="assets/images/self_intro.png"
+                alt="打开自我介绍"
+                width={50}
+                height={50}
+              />
+              <b>
+                <i>官网介绍</i>
+              </b>
+            </div>
+          </div>
+        </a>
+      </Link>
       <Container>
         <Head>
           <title>{config.Name}的歌单</title>
@@ -192,6 +192,7 @@ export default function Home() {
           <Row>
             <Banner
               songCount={filteredSongList.length}
+              isFiltered={categorySelection.remark !== "" || categorySelection.lang !== ""}
             />
           </Row>
           {/** 过滤器控件 */}
@@ -280,7 +281,7 @@ export default function Home() {
         )}
         <Link href={"https://github.com/Rndlab/vup-song-list-main"} passHref>
           <footer className={styles.footer}>
-            <img src="assets/images/github.png"></img>
+            <img src="assets/images/github.png" alt="github"></img>
             <a>{config.Footer}</a>
           </footer>
         </Link>

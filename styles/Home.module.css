@@ -202,7 +202,7 @@
 
 @media (min-width: 1201px) {
   .outerContainer {
-    background: url("/assets/images/background.png") center center no-repeat fixed;
+    background: url("/assets/images/background.jpg") center center no-repeat fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -223,6 +223,9 @@
     width: 55%;
     opacity: 0;
     transition: opacity 1s;
+    display: flex;
+    height: 90%;
+    align-items: center;
   }
 
   .introBoxInnerDiv {
@@ -257,7 +260,7 @@
 
 @media (max-width: 1200px) {
   .outerContainer {
-    background: url("/assets/images/background.png") center center no-repeat fixed;
+    background: url("/assets/images/background.jpg") center center no-repeat fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -332,4 +335,9 @@
   top: 0.25rem;
   right: 0.25rem;
   z-index: 1;
+  border-radius: 5px;
+}
+
+.offCanvasToggleDiv:hover {
+  background-color: rgba(255, 255, 255, 0.5);
 }

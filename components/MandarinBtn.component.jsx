@@ -21,28 +21,28 @@ export default function MandarinBtn({
   return (
     <div className="d-grid">
       <SplitButton
-        title="国语"
+        title={initialFilter === "" ? "国语" : `国语（${initialFilter}）`}
         className={
-          languageFilter == "国语"
+          languageFilter === "国语"
             ? styles.mandarinBtnActive
             : styles.mandarinBtn
         }
         onClick={(e) => {
-          languageFilter == "国语"
+          languageFilter === "国语"
             ? setLanguageState("")
             : setLanguageState("国语");
         }}
       >
-        {availableAlphabets.map((alphabet) => {
+        {availableAlphabets.sort().map((alphabet) => {
           return (
             <Dropdown.Item
               onClick={(e) => {
-                initialFilter == alphabet
+                initialFilter === alphabet
                   ? setInitialState("")
                   : setInitialState(alphabet);
               }}
               style={
-                initialFilter == alphabet
+                initialFilter === alphabet
                   ? {
                       backgroundColor: activeColor,
                       cursor: getCursor(),
